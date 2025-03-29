@@ -52,6 +52,12 @@ export default function RootLayout() {
           headerTitle: 'Explore Club'
         }}
       />
+      <Stack.Screen
+        name="add-event/index"
+        options={{
+          headerTitle: 'Add New Event'
+        }}
+      />
     </Stack>
     </AuthContext.Provider>
   );

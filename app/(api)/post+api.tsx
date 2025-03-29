@@ -23,7 +23,6 @@ export async function GET(request: Request) {
         ON  post.createdby=users.email 
         WHERE  visiblein='${visibleIn}' ORDER BY ${orderField} desc;
 `);
-
   await client.end();
   return Response.json(result.rows);
 }

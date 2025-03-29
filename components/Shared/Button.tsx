@@ -6,25 +6,28 @@ type ButtonProps = {
   text: string;
   onPress: () => void;
   loading?: boolean;
-  outline?:boolean
+  outline?: boolean;
+  fullwidth?: boolean;
 };
 
 export default function Button({
   text,
   onPress,
   loading = false,
-  outline=false
+  outline = false,
+  fullwidth = false,
 }: ButtonProps) {
   return (
     <TouchableOpacity
       onPress={onPress}
       style={{
         padding: 15,
-        backgroundColor:outline?Colors.WHITE: Colors.PRIMARY,
-        borderWidth:outline?1:0,
+        backgroundColor: outline ? Colors.WHITE : Colors.PRIMARY,
+        borderWidth: outline ? 1 : 0,
         borderColor: Colors.PRIMARY,
         marginTop: 15,
         borderRadius: 10,
+        flex: fullwidth ? 1 : 0,
       }}
     >
       {loading ? (
@@ -34,7 +37,7 @@ export default function Button({
           style={{
             fontSize: 18,
             textAlign: "center",
-            color: outline?Colors.PRIMARY: Colors.WHITE,
+            color: outline ? Colors.PRIMARY : Colors.WHITE,
           }}
         >
           {text}
